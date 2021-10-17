@@ -1,0 +1,102 @@
+<nav class = "navbar navbar -light ">
+    <div class = "container fluid ">
+        <h1>USER DETAILS</h1>
+        <form class="d-flex">
+          <div class="search-hero">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" Start searching">
+          </div>
+        </form>
+        <div class ="d-flex">
+            <button   class = "btn btn-success mx-2 " routerLink ="/update" >ADD  USER</button>
+            
+              <button id ="logoutModal" class ="btn btn-danger mx-2"  data-bs-toggle="modal" data-bs-target="#logoutModal"routerLink ="/login">LOGOUT</button>
+            
+            
+        </div>
+    </div>
+</nav>
+
+
+
+
+<!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+
+<table class=" table mt-3 " id="mytable">
+    <thead> 
+       
+         
+         <th scope="col">Id</th>
+         <th scope="col">FullName</th>
+         <th scope="col">Email ID</th>
+         <th scope="col">Mobile number</th>
+         <th scope="col">Password</th>
+         <th scope="col">Action</th>
+
+       
+     </thead>
+     
+     <tbody>
+      <tr *ngFor = "let item of data |searchFilter: searchText"> 
+       
+       <td>{{ item.id }}</td>
+       <td>{{ item.Name }}</td>
+       
+       <td>{{ item.Email }}</td>
+       <td>{{ item.Mobile }}</td>
+       <td>{{ item.Password }}</td>
+       <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+       <td>
+         <a href="!" (click)="onEdit(item)" data-bs-toggle="modal" data-bs-target="#exampleModal"    class ="btn btn-info"   >EDIT</a>
+         <button href="!" class ="btn btn-danger mx-2" (click) = "deleteUser(item)" >Delete</button>
+
+       </td>
+     </tr>
+     
+   </tbody>
+</table>
+
+
+  
+  
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-sm-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">EDIT USER</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="userForm">
+               
+                 <div class="mb-3">
+                     <label for="exampleInputName" class="form-label">Full Name</label>
+                     <input formControlName = "Name" type="Text" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+                   
+                 </div>
+
+                 <div class="mb-3">
+                     <label for="exampleInputPassword1" class="form-label">Password</label>
+                     <input formControlName = "Password" type="text" class="form-control" id="exampleInputPassword1">
+                   </div>
+
+                 <div class="mb-3">
+                   <label for="exampleInputEmail1" class="form-label">Email address</label>
+                   <input formControlName = "Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                 
+                 </div>
+
+                 <div class="mb-3">
+                     <label for="exampleInputNumber" class="form-label">Phone Number</label>
+                     <input formControlName = "Mobile" type="Text" class="form-control" id="exampleInputNumber">
+                  </div>
+
+                </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          
+          <button type="button" class="btn btn-primary" (click) =" updateUserData() " >UPDATE</button>
+        </div>
+      </div>
+    </div> 
+  </div> 
