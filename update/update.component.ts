@@ -32,7 +32,7 @@ export class UpdateComponent implements OnInit {
  
 
   postUserData(){
-      this.homeModelobj.Name = this.userForm.value.Name;  // the value in the form get appended to the object and then it get post  to the server
+      this.homeModelobj.Name = this.userForm.value.Name;  
       this.homeModelobj.Password = this.userForm.value.Password;
       this.homeModelobj.Mobile = this.userForm.value.Mobile;
       this.homeModelobj.Email = this.userForm.value.Email;
