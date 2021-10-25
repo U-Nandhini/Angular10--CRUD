@@ -15,7 +15,7 @@ For better understanding of the concepts i have developed the simple CRUD operat
 <li>Login</li>
 <li>Register</li>
 <li>Home</li>
-<li>Add User<li>
+<li>Add User</li>
 <li>Update</li>
 </ul><br>
 <b>Register Component :-</b> It is used to register the user basic information like mobile Number,email,name and password which is stored in the fake JSON-Server.<br><br>
