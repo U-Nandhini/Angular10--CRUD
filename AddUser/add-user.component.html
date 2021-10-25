@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="text-center">
+            <h1>Add User</h1>
+          </div>
+          <form>
+            <form [formGroup]="userForm">
+              <div class="mb-3">
+                <label for="exampleInputName" class="form-label">Full Name</label>
+                <input
+                  formControlName="Name"
+                  type="Text"
+                  class="form-control"
+                  id="exampleInputName"
+                  aria-describedby="nameHelp"
+                />
+              </div>
+  
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Password</label
+                >
+                <input
+                  formControlName="Password"
+                  type="text"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
+              </div>
+  
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  formControlName="Email"
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+  
+              <div class="mb-3">
+                <label for="exampleInputNumber" class="form-label"
+                  >Phone Number</label
+                >
+                <input
+                  formControlName="Mobile"
+                  type="Text"
+                  class="form-control"
+                  id="exampleInputNumber"
+                />
+              </div>
+  
+              <button
+                type="submit"
+                class="btn btn-primary mx-2"
+                (click)="addUser()"
+                
+              >
+                ADD
+              </button>
+  
+              <button
+                type="submit"
+                routerLink="/home"
+                class="btn btn-primary mx-2"
+              >
+                CANCEL
+              </button>
+            </form>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

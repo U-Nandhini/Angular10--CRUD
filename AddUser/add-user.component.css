@@ -1,0 +1,19 @@
+.card {
+    margin-top: 10 px;
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(49, 48, 130);
+  
+    /* position,top,left,transform is used to center the form */
+  }
+  .card h1,
+  h6,
+  label {
+    color: white;
+  }
+  
